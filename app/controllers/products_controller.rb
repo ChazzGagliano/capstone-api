@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
-  def product
-    render json: {name = product.name,
-    price = product.price,
-    image_url = product.image_url
-    description = product.description
- }
+  def sole
+    @product = Product.first
+    render template: "products/show"
+  end
+  def index
+    @products = Product.all
+    render template: "products/index"
   end
 end
