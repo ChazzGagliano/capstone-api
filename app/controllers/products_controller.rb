@@ -1,10 +1,6 @@
 class ProductsController < ApplicationController
-  def sole
-    @product = Product.first
+  def singular
+    @product = Product.find_by(id: 1)
     render template: "products/show"
-  end
-  def index
-    @products = Product.all
-    render template: "products/index"
   end
 end
