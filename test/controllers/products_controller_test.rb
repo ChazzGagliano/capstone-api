@@ -17,5 +17,6 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_equal ["id", "name", "price", "image_url", "description"], data.keys
   end
 
-  
+  def create
+    
 end
