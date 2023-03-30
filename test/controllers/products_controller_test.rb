@@ -17,6 +17,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_equal ["id", "name", "price", "image_url", "description"], data.keys
   end
 
-  def create
-    
+  test "destroy" do
+    assert_difference "Product.count", -1 do
+      delete "/products/#{Product.first.id}.json"
+      assert_response 200
+    end
+  end
+
 end
