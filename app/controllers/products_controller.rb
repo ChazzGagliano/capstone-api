@@ -14,10 +14,12 @@ class ProductsController < ApplicationController
    price: params[:price], 
    image_url: params[:image_url],
    description: params[:description]
-  )
-  @product.save
-  render :show
+   )
+   @product.save
+   render :show
   end
+
+
 
   def update
     @product = Product.find_by(id: params[:id])
@@ -29,11 +31,10 @@ class ProductsController < ApplicationController
   @product.save
   render :show
   end
+  
   def destroy 
     @recipe = Product.find_by(id: params[:id])
     @recipe.destroy
     render json: {message: "product destroyed"}
-  
-  
   end
 end
