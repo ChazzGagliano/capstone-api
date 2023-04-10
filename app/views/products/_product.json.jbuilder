@@ -8,5 +8,6 @@ json.tax product.tax
 json.is_discounted product.is_discounted
 json.total product.total
 json.quantity product.quantity
+json.supplier_id product.supplier_id
 
 
