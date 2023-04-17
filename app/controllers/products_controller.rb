@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
    def show
+    p current_user
+    p current_user
+    p current_user
     @product = Product.find_by(id: params["id"])
     render :show
    end
@@ -15,6 +18,7 @@ class ProductsController < ApplicationController
     description: params[:description],
     quantity: params[:quantity],
     supplier_id: params[:supplier_id],
+    user_id: current_user.id
     )
       if @product.save
         render :show
@@ -25,8 +29,8 @@ class ProductsController < ApplicationController
    
 
 
-
   def update
+    p current_user
     @product = Product.find_by(id: params[:id]) || @product.title
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price

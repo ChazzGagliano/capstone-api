@@ -9,5 +9,6 @@ json.total product.total
 json.quantity product.quantity
 json.supplier product.supplier
 json.images product.images
+json.user_id product.user_id
 
 
