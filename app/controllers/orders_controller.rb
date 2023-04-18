@@ -1,20 +1,24 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
+
   def show
-    @order = Order.find_by(id: params[:id])
+    @order = Order.find_by(id: params[:id], user_id: current_user.id)
     render :show
   end
 
   def index
-    @orders = Order.all
+    @orders = current_users.orders
     render :index
   end
 
   def create
     @order = Order.new(
-    user_id: current_user.id, 
+ 
     product_id: params[:product_id],
     quantity: params[:quantity],
-    subtotal: params[:subtotal]
+    subtotal: params[:subtotal],
+    user_id: current_user.id
     )
     if @order.save
       render :show
