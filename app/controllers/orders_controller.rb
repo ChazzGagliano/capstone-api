@@ -8,8 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_users.orders
-    render :index
+    @orders = current_user.orders
+    render :index 
   end
 
   def create

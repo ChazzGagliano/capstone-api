@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :images
   has_many :orders
+  has_many :category_product
 
   validates :name, presence: true
   validates :name, uniqueness: true

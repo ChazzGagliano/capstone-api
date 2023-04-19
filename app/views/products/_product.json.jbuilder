@@ -11,5 +11,6 @@ json.supplier product.supplier
 json.images product.images
 json.user_id product.user_id
 json.orders product.orders
+json.category_product product.category_product
 
 
