@@ -47,8 +47,8 @@ class ProductsController < ApplicationController
   end
   
   def destroy 
-    @recipe = Product.find_by(id: params[:id])
-    @recipe.destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
     render json: {message: "product destroyed"}
   end
 end

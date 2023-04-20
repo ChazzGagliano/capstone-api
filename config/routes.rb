@@ -12,4 +12,7 @@ post "/sessions" => "sessions#create"
 get "/orders/:id" => "orders#show" #users
 get "/orders" => "orders#index" #users
 post "/orders" => "orders#create" #users
+post "/carted_products" => "carted_products#create"
+get "/carted_products" => "carted_products#index"
+delete "/carted_products/:id" => "carted_products#destroy"
 end
